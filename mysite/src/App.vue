@@ -5,6 +5,9 @@
   </div>
 </template>
 
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+
 <script>  
 import Users from './components/Tabella.vue' 
 export default {    
