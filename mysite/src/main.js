@@ -5,7 +5,7 @@ createApp(App).mount('#app')
 
 const admin = require('firebase-admin');
 
-const serviceAccount = require('../src/myfiresite-88939-913d2ec95558.json');
+const serviceAccount = require('c:/Users/emanu/Documents/myfiresite-88939-ab83a8f33460.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
@@ -13,10 +13,10 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-const docRef = db.collection('users').doc('alovelace');
-
-docRef.set({
-  first: 'Ada',
-  last: 'Lovelace',
-  born: 1815
-});
+const cityRef = db.collection('costi').doc('id');
+const doc = cityRef.get();
+if (!doc.exists) {
+  console.log('No such document!');
+} else {
+  console.log('Document data:', doc.data());
+}
