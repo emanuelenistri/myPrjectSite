@@ -11,9 +11,25 @@ const db = new Firestore({
 });
 
 const docRef = db.collection('users').doc('alovelace');
-
 docRef.set({
   first: 'Ada',
   last: 'Lovelace',
   born: 1815
 });
+
+function myfiresite() {
+  this.filters = {
+    datain: '',
+    datafi: '',
+    tipo: ''
+  };
+}
+
+  myfiresite.prototype.addRestaurant = function(docRef) {
+  var collection = Firestore.firestore().collection('costi');
+  return collection.add(docRef);
+};
+
+window.onload = function() {
+  window.app = new myfiresite();
+};
